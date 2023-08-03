@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="dbo_sonsiteyonetimiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tbl_sahipler">
+          <Key>
+            <PropertyRef Name="sahip_id" />
+          </Key>
+          <Property Name="sahip_id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sahip_ad" Type="varchar" MaxLength="30" />
+          <Property Name="sahip_soyad" Type="varchar" MaxLength="30" />
+          <Property Name="sahip_tel" Type="char" MaxLength="15" />
+          <Property Name="sahip_kiradurum" Type="bit" />
+          <Property Name="sahip_aydatdurum" Type="bit" />
+          <Property Name="gorunurluk" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="dbo_sonsiteyonetimiModelStoreContainer">
+          <EntitySet Name="tbl_sahipler" EntityType="Self.tbl_sahipler" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="dbo_sonsiteyonetimiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tbl_sahipler">
+          <Key>
+            <PropertyRef Name="sahip_id" />
+          </Key>
+          <Property Name="sahip_id" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sahip_ad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="sahip_soyad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="sahip_tel" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="sahip_kiradurum" Type="Boolean" />
+          <Property Name="sahip_aydatdurum" Type="Boolean" />
+          <Property Name="gorunurluk" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="dbo_sonsiteyonetimiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tbl_sahipler" EntityType="Self.tbl_sahipler" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="dbo_sonsiteyonetimiModelStoreContainer" CdmEntityContainer="dbo_sonsiteyonetimiEntities">
+          <EntitySetMapping Name="tbl_sahipler">
+            <EntityTypeMapping TypeName="dbo_sonsiteyonetimiModel.tbl_sahipler">
+              <MappingFragment StoreEntitySet="tbl_sahipler">
+                <ScalarProperty Name="gorunurluk" ColumnName="gorunurluk" />
+                <ScalarProperty Name="sahip_id" ColumnName="sahip_id" />
+                <ScalarProperty Name="sahip_ad" ColumnName="sahip_ad" />
+                <ScalarProperty Name="sahip_soyad" ColumnName="sahip_soyad" />
+                <ScalarProperty Name="sahip_tel" ColumnName="sahip_tel" />
+                <ScalarProperty Name="sahip_kiradurum" ColumnName="sahip_kiradurum" />
+                <ScalarProperty Name="sahip_aydatdurum" ColumnName="sahip_aydatdurum" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
